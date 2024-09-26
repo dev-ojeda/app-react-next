@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: react-app-service
+  namespace: neo1-ingress-nginx
+spec:
+  type: NodePort
+  selector:
+    app.kubernetes.io/name: react-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
