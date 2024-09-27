@@ -1,8 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: react-app-ingress
-  namespace: neo1-ingress-nginx
+  name: app-react-next
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
@@ -15,6 +14,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: react-app-service
+            name: app-react-next
             port:
               number: 80

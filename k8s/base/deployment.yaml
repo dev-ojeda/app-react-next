@@ -1,30 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: react-app
-  namespace: neo1-ingress-nginx
-  labels:
-    app.kubernetes.io/name: react-app
+  name: app-react-next
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app.kubernetes.io/name: react-app
+      app: app-react-next
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: react-app
+        app: app-react-next
     spec:
       containers:
-      - name: react-app
+      - name: app-react-next
         image: docker.io/devojeda/app-react-next:0.1
         resources:
           requests:
-            cpu: "247m"
-            memory: "215Mi"
+            cpu: "100m"
+            memory: "256Mi"
           limits:
-            cpu: "247m"
-            memory: "215Mi"
+            cpu: "200m"
+            memory: "512Mi"
         ports:
         - containerPort: 80
           protocol: TCP
