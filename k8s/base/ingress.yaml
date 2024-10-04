@@ -1,19 +1,19 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: app-react-next
+  name: app-react-next-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
   rules:
-  - host: localhost.127.0.0.1.sslip.io
+  - host: multinode-m02
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: app-react-next
+            name: app-react-next-service
             port:
               number: 80

@@ -1,10 +1,14 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: app-react-next
+  name: app-react-next-service
+  labels:
+    app: app-react-next
 spec:
-  type: NodePort
+  selector:
+    app: app-react-next
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 80
+    targetPort: 8080
+  type: LoadBalancer

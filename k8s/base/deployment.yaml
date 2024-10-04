@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-react-next
+  name: app-react-next-deployment
 spec:
   replicas: 2
   selector:
@@ -13,16 +13,20 @@ spec:
         app: app-react-next
     spec:
       containers:
-      - name: app-react-next
-        image: docker.io/devojeda/app-react-next:0.1
-        resources:
-          requests:
-            cpu: "100m"
-            memory: "256Mi"
-          limits:
-            cpu: "200m"
-            memory: "512Mi"
-        ports:
-        - containerPort: 80
-          protocol: TCP
-        imagePullPolicy: IfNotPresent
+        - name: app-react-next
+          image: docker.io/repo/app-react-next:0.1
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "200m"
+              memory: "512Mi"
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+      imagePullSecrets:
+        - name: regcred
+      nodeSelector:
+        role: worker
+        kubernetes.io/hostname: multinode-m02
