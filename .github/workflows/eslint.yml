@@ -28,7 +28,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install --legacy-peer-deps --loglevel=warn
 
       # Cache de la build de Next.js
       - name: Cache Next.js build
