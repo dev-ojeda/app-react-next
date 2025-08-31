@@ -7,7 +7,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@nestjs/cli": "^10.0.0",
+    "@nestjs/cli": "^11.0.10",
     "date-fns": "^3.6.0",
     "gray-matter": "^4.0.3",
     "next": "^14.2.15",
@@ -24,7 +24,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.20",
-    "eslint": "^8.57.1",
+    "eslint": "^9.34.0",
     "eslint-config-next": "14.2.13",
     "eslint-plugin-react": "^7.37.1",
     "postcss": "^8.4.47",
