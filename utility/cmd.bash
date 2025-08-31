@@ -35,6 +35,7 @@ _change_rol_node() {
 
 _change_profile() {
     minikube profile multinode
+    minikube addons enable ingress
 }
 
 _get_pods_metallb() {
@@ -57,6 +58,10 @@ _create_L2() {
 
 _create_registry() {
     kubectl create secret generic regcred --from-file=.dockerconfigjson="$HOME"/.docker/config.json --type=kubernetes.io/dockerconfigjson -n default
+}
+
+_decode(){
+    echo ZGV2b2plZGE6ZGNrcl9wYXRfdnVsbEV2X1VYbzlLODY2UFctUjNYRXo3SDNB | base64 --decode
 }
 
 _validate_function() {

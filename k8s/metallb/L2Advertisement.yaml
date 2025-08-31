@@ -2,15 +2,12 @@ apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
 metadata:
   name: l2-advertisement-demo
-  namespace: metallb-system
+  namespace: default
 spec:
   ipAddressPools:
   - first-pool-demo
   nodeSelectors:
   - matchLabels:
-      kubernetes.io/hostname: multinode-m02
-  - matchLabels:
-      kubernetes.io/hostname: multinode-m03
+      kubernetes.io/hostname: minikube
   interfaces:
   - eth0
-  - eth1

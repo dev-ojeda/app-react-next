@@ -3,7 +3,7 @@ apiVersion: v1
 kind: LimitRange
 metadata:
   name: app-react-next-limit-container
-  namespace: app-client-ns
+  namespace: default
 spec:
   limits:
   # 'default' and 'defaultRequest' may not be specified when type is 'Pod'
@@ -26,7 +26,7 @@ apiVersion: v1
 kind: LimitRange
 metadata:
   name: app-react-next-limit-pvc
-  namespace: app-client-ns
+  namespace: default
 spec:
   limits:
   - type: PersistentVolumeClaim
